@@ -78,9 +78,10 @@ def get_category():
 
     print('\nEnter the number of your selection: ')
     selection = int(input())
-
+    
     if selection in range(1, 25):
-      return str(selection + 7)
+      # the api categories are offset by 7
+      return str(selection + 7) 
 
 def get_difficulty():
   while True:
@@ -110,7 +111,7 @@ def get_game_type():
     selection = int(input())
 
     if selection == 1:
-      return
+      return 'any'
     if selection == 2:
       return 'multiple'
     if selection == 3:
@@ -171,6 +172,7 @@ def multiple_choice(data):
     data['incorrect_answers'][2]
   ]
 
+  # this mutates the existing array
   random.shuffle(answers)
 
   for i in range(0, 3):
