@@ -1,0 +1,12 @@
+[[source]]
+name = "opentdb-cli"
+url = "https://github.com/plarabee/opentdb-cli"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+requests = "*"
+
+[requires]
+python_version = "3.7"
