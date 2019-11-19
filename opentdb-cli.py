@@ -131,8 +131,8 @@ def get_json():
     full_url += f'&category={category}'
   if difficulty != 'any':
     full_url += f'&difficulty={difficulty}'
-  if game_type in ['multiple', 'boolean']:
-    full_url += f'&type={type}'
+  if game_type != 'any':
+    full_url += f'&type={game_type}'
 
   # make http request, return json
   r = requests.get(full_url)
@@ -175,7 +175,7 @@ def multiple_choice(data):
   # this mutates the existing array
   random.shuffle(answers)
 
-  for i in range(0, 3):
+  for i in range(0, 4):
     print(f'{i + 1}: {answers[i]}')
   print('\n')
 
